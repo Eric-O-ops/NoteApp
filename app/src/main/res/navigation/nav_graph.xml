@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onBoardViewPageFragment">
+
+    <fragment
+        android:id="@+id/onBoardViewPageFragment"
+        android:name="com.geektech.noteapp.fragments.onboard.OnBoardViewPageFragment"
+        android:label="fragment_on_board_view_page"
+        tools:layout="@layout/fragment_on_board_view_page" >
+        <action
+            android:id="@+id/action_onBoardViewPageFragment_to_noteAppMainFragment"
+            app:destination="@id/noteAppMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteAppMainFragment"
+        android:name="com.geektech.noteapp.fragments.noteapp.NoteAppMainFragment"
+        android:label="fragment_note_app_main"
+        tools:layout="@layout/fragment_note_app_main" />
+</navigation>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NoteApp</string>
+    <string name="text_under_anim_picture_one">Очень удобный функционал</string>
+    <string name="text_under_anim_picture_two">Быстрый, качественный продукт</string>
+    <string name="text_under_anim_picture_three">Куча функций и интересных фишек</string>
+
+</resources>
