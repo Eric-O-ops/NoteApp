@@ -1,4 +1,5 @@
 package com.geektech.noteapp.models
 
-class NoteModel {
-}
+data class NoteModel(
+    val title: String
+    )

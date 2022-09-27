@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -52,5 +53,8 @@ dependencies {
     //LottieFiles
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    //Dots indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
 
 }

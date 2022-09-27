@@ -1,9 +1,9 @@
-package com.geektech.noteapp.adapters
+package com.geektech.noteapp.ui.adapters
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.geektech.noteapp.fragments.onboard.OnBoardMainFragment
+import com.geektech.noteapp.ui.fragments.onboard.OnBoardFragment
 
 class OnBoardAdapter(fragment: Fragment):FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
@@ -11,7 +11,7 @@ class OnBoardAdapter(fragment: Fragment):FragmentStateAdapter(fragment) {
     }
 
     override fun createFragment(position: Int): Fragment {
-        return OnBoardMainFragment().apply {
+        return OnBoardFragment().apply {
             arguments = Bundle().apply {
                 putInt("position",position)
             }

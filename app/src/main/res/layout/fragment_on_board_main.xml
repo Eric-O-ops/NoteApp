@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
-    tools:context=".fragments.onboard.OnBoardMainFragment">
+    tools:context=".ui.fragments.onboard.OnBoardFragment">
 
     <TextView
         android:id="@+id/text_skip"
@@ -15,8 +15,8 @@
         android:text="Пропустить"
         android:textSize="15sp"
         android:layout_gravity="end"
-        android:layout_margin="20dp"
-        />
+        android:layout_margin="20dp" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="match_parent"
@@ -26,6 +26,7 @@
         app:lottie_loop="true"
         android:layout_gravity="center"
         android:layout_marginBottom="100dp"/>
+
     <TextView
         android:id="@+id/text_under_anim_picture"
         android:layout_width="wrap_content"
@@ -35,6 +36,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:textColor="@color/white" />
+
     <TextView
         android:id="@+id/start_work"
         android:layout_width="wrap_content"
@@ -46,35 +48,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="190dp"
         />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="85dp"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/dot_one"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_dot_circle_orange"
-
-            />
-        <ImageView
-            android:id="@+id/dot_two"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_dot_circle_white"
-            android:layout_marginHorizontal="6dp"
-            />
-        <ImageView
-            android:id="@+id/dot_three"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_dot_circle_white"
-
-            />
-
-
-    </LinearLayout>
 
 </FrameLayout>

@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_detail.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_detil.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_main.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_on_board_main.xml" value="0.2453125" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_on_board_view_page.xml" value="0.2453125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/item_note.xml" value="0.259375" />
       </map>
     </option>
   </component>
