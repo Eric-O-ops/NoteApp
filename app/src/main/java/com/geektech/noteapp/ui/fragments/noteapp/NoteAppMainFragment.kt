@@ -33,8 +33,8 @@ class NoteAppMainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initializeRecycleViewAdapter()
-        getNoteAndAddToList()
         addNote()
+        getNoteAndAddToList()
     }
 
     private fun initializeRecycleViewAdapter() {

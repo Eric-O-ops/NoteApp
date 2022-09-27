@@ -16,7 +16,7 @@ class NoteAppDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNoteAppDetailBinding.inflate(layoutInflater)
+        binding = FragmentNoteAppDetailBinding.inflate(inflater,container,false)
         return binding.root
     }
 

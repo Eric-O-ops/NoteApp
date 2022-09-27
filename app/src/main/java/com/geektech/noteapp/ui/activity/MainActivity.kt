@@ -24,17 +24,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        pef = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
-
-        val editor = pef.edit()
-        editor.putBoolean("key",true)
-        editor.apply()
-
-       if (pef.getBoolean("key",false)){
-           findNavController(6).navigate(
-               OnBoardMainFragmentDirections.actionOnBoardViewPageFragmentToNoteAppMainFragment()
-           )
-
-       }
+//        pef = getSharedPreferences("PREFERENCE_NAME", MODE_PRIVATE)
+//
+//        val editor = pef.edit()
+//        editor.putBoolean("key",true)
+//        editor.apply()
+//
+//       if (pef.getBoolean("key",false)){
+//           findNavController(6).navigate(
+//               OnBoardMainFragmentDirections.actionOnBoardViewPageFragmentToNoteAppMainFragment()
+//           )
+//
+//       }
     }
 }
