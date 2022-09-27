@@ -69,7 +69,7 @@ class OnBoardFragment : Fragment() {
                 visibility = View.VISIBLE
                 setOnClickListener {
                     goToMainFragment()
-                   // onBoardWasActivated()
+                    onBoardWasActivated()
                 }
             }
         }
@@ -81,8 +81,7 @@ class OnBoardFragment : Fragment() {
         )
     }
 
-//    private fun onBoardWasActivated(){
-//        PreferenceHelper().putValue(true)
-//    }
+    private fun onBoardWasActivated(){
+   }
 
 }

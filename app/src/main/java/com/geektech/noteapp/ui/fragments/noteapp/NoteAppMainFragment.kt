@@ -14,8 +14,11 @@ import com.geektech.noteapp.models.NoteModel
 import com.geektech.noteapp.ui.adapters.NoteAdapter
 
 class NoteAppMainFragment : Fragment() {
+
     private lateinit var binding: FragmentNoteAppMainBinding
+
     private val noteList:ArrayList<NoteModel> = ArrayList()
+
     private val adapter = NoteAdapter(noteList)
 
     override fun onCreateView(
@@ -28,6 +31,7 @@ class NoteAppMainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initializeRecycleViewAdapter()
         getNoteAndAddToList()
         addNote()

@@ -1,12 +1,11 @@
 package com.geektech.noteapp.data.locale
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 
 class PreferenceHelper {
-    private var sharedPreference: SharedPreferences? = null
 
+    private var sharedPreference: SharedPreferences? = null
 
     fun unit(context: Context) {
         sharedPreference =
