@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onBoardMainFragment">
+    tools:ignore="InvalidNavigation">
 
     <fragment
         android:id="@+id/onBoardMainFragment"
@@ -14,7 +14,7 @@
         <action
             android:id="@+id/action_onBoardViewPageFragment_to_noteAppMainFragment"
             app:destination="@id/noteAppMainFragment"
-            app:popUpTo="@+id/OnBoardMainFragment"
+            app:popUpTo="@+id/onBoardMainFragment"
             app:popUpToInclusive="true"
             />
 
@@ -24,22 +24,23 @@
         android:id="@+id/noteAppMainFragment"
         android:name="com.geektech.noteapp.ui.fragments.noteapp.NoteAppMainFragment"
         android:label="fragment_note_app_main"
-        tools:layout="@layout/fragment_note_app_main"
-        >
+        tools:layout="@layout/fragment_note_app_main">
+
         <action
             android:id="@+id/action_noteAppMainFragment_to_noteAppDetailFragment"
             app:destination="@id/noteAppDetailFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/noteAppDetailFragment"
         android:name="com.geektech.noteapp.ui.fragments.noteapp.detail.NoteAppDetailFragment"
         android:label="fragment_note_app_detail"
-        tools:layout="@layout/fragment_note_app_detail"
-        >
+        tools:layout="@layout/fragment_note_app_detail">
+
         <action
             android:id="@+id/action_noteAppDetailFragment_to_noteAppMainFragment"
             app:destination="@id/noteAppMainFragment" />
-    </fragment>
 
+    </fragment>
 </navigation>

@@ -3,23 +3,16 @@ package com.geektech.noteapp.data.locale
 import android.content.Context
 import android.content.SharedPreferences
 
-class PreferenceHelper {
+class PreferenceHelper(context: Context) {
 
-    private var sharedPreference: SharedPreferences? = null
-
-    fun unit(context: Context) {
-        sharedPreference =
+    private var sharedPreference: SharedPreferences =
             context.getSharedPreferences("onBoard", Context.MODE_PRIVATE)
-    }
 
     fun isOnBoardShowed(): Boolean {
-
-        return sharedPreference!!.getBoolean("isOnBoardShowed", false)
+        return sharedPreference.getBoolean("key", false)
     }
 
-    fun putValue(boolean: Boolean){
-        val editor = sharedPreference?.edit()
-        editor?.putBoolean("isOnBoardShowed",boolean)
-        editor?.apply()
+    fun putValue(boolean: Boolean) {
+        sharedPreference.edit()?.putBoolean("key", boolean)?.apply()
     }
 }

@@ -1,29 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     tools:context=".ui.fragments.noteapp.NoteAppMainFragment">
+
+    <Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/little_light_black">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/ic_menu"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Заметки"
+            android:textSize="20sp"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:background="@drawable/ic_shape_recycler_view"
+            android:layout_gravity="end"
+            android:layout_margin="15dp"
+            />
+
+    </Toolbar>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_note"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/circle_edit_text"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        android:hint="Поиск заметок"
+        android:textColorHint="@color/dark_gray"
+        android:drawableStart="@drawable/ic_search"
+        android:paddingStart="18dp"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="28dp"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_note" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_add_note"
-        android:layout_width="60dp"
-        android:layout_height="70dp"
-        app:cornerRadius="40dp"
-        android:backgroundTint="@color/orange"
-        android:text="+"
-        android:textSize="30sp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_add_note_plus"
+        app:backgroundTint="@color/orange"
+        app:tint="@color/white"
         android:layout_gravity="bottom|end"
-        android:layout_margin="25dp"
+        android:layout_margin="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        />
-
-
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

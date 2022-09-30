@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.geektech.noteapp.App
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.FragmentOnBoardMainBinding
 
@@ -60,7 +61,7 @@ class OnBoardFragment : Fragment() {
                 visibility = View.VISIBLE
                 setOnClickListener {
                    goToMainFragment()
-                    //onBoardWasActivated()
+                    onBoardWasActivated()
                 }
             }
         } else{
@@ -68,6 +69,7 @@ class OnBoardFragment : Fragment() {
             binding.textSkip.apply {
                 visibility = View.VISIBLE
                 setOnClickListener {
+
                     goToMainFragment()
                     onBoardWasActivated()
                 }
@@ -82,6 +84,6 @@ class OnBoardFragment : Fragment() {
     }
 
     private fun onBoardWasActivated(){
+        App.preferenceHelper.putValue(true)
    }
-
 }
