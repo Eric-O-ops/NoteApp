@@ -12,6 +12,7 @@ import com.geektech.noteapp.App
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.FragmentNoteAppDetailBinding
 import com.geektech.noteapp.models.NoteModel
+import com.geektech.noteapp.setBackStackData
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -38,7 +39,6 @@ class NoteAppDetailFragment : Fragment() {
 
     private fun sendNewNote() {
         binding.textConfirmNote.setOnClickListener {
-
                 val title = binding.title.text.toString()
                 val description = binding.directions.text.toString()
                 val date = getData()
@@ -50,8 +50,8 @@ class NoteAppDetailFragment : Fragment() {
             findNavController().navigate(
                 R.id.action_noteAppDetailFragment_to_noteAppMainFragment
             )
-                //val newNote:NoteModel = NoteModel(title,description,"12.03.22","12:00")
-            //setBackStackData("newNote",newNote,true)
+                val newNote:NoteModel = NoteModel(title,description,"12.03.22","12:00")
+                setBackStackData("newNote",newNote,true)
         }
     }
 

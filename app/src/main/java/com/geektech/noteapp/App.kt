@@ -39,6 +39,6 @@ class App : Application() {
     }
 
     private fun initPreference() {
-        App.preferenceHelper = PreferenceHelper(this)
+        preferenceHelper = PreferenceHelper(this)
     }
 }

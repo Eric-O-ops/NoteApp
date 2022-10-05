@@ -6,6 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.geektech.noteapp.ui.fragments.onboard.OnBoardFragment
 
 class OnBoardAdapter(fragment: Fragment):FragmentStateAdapter(fragment) {
+
     override fun getItemCount(): Int {
         return  3
     }

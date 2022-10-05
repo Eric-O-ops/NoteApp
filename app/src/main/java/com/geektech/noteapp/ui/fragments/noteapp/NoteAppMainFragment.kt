@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.geektech.noteapp.App
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.FragmentNoteAppMainBinding
+import com.geektech.noteapp.getBackStackData
 import com.geektech.noteapp.models.NoteModel
 import com.geektech.noteapp.ui.adapters.NoteAdapter
 import com.geektech.noteapp.ui.adapters.OnNoteClickListener
@@ -62,7 +63,7 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
 //        getBackStackData<NoteModel>(
 //            "newNote"
 //        , {
-//               noteList.add(it)
+//               noteList.add()
 //
 //        })
     }
