@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
 import com.geektech.noteapp.App
 import com.geektech.noteapp.data.locale.PreferenceHelper
 import com.geektech.noteapp.ui.adapters.OnBoardAdapter
@@ -33,7 +34,7 @@ class OnBoardMainFragment : Fragment() {
 
     private fun initializeOnBoard() {
         binding.viewPager.adapter = OnBoardAdapter(this@OnBoardMainFragment)
-        binding.dotsIndicator.attachTo(binding.viewPager)
+        binding.dotsIndicator.setViewPager(binding.viewPager)
 
     }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".ui.fragments.signup.SignUpFragment">
+
+    <ImageView
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/image_log_in" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация по номеру"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:layout_gravity="center"
+        android:layout_marginTop="46dp" />
+
+    <EditText
+        android:textColor="@color/gray"
+        android:id="@+id/edit_text_number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="Номер"
+        android:textColorHint="@color/gray"
+        android:inputType="phone"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="13dp"
+        android:paddingStart="18dp"
+        android:maxLines="1"
+        android:background="@drawable/circle_edit_text" />
+
+    <EditText
+        android:textColor="@color/gray"
+        android:id="@+id/edit_text_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="Ваш код"
+        android:textColorHint="@color/gray"
+        android:inputType="number"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="13dp"
+        android:paddingStart="18dp"
+        android:maxLines="1"
+        android:background="@drawable/circle_edit_text"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="30dp"
+        android:paddingVertical="15dp"
+        app:cornerRadius="30dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange"
+        android:text="Отправить"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_send_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить снова"
+        android:textSize="15sp"
+        android:textColor="@color/orange"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

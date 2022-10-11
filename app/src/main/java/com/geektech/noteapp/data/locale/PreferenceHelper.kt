@@ -8,11 +8,15 @@ class PreferenceHelper(context: Context) {
     private var sharedPreference: SharedPreferences =
             context.getSharedPreferences("onBoard", Context.MODE_PRIVATE)
 
-    fun isOnBoardShowed(): Boolean {
-        return sharedPreference.getBoolean("key", false)
+    fun isOnBoardShowed(nameKey: String): Boolean {
+        return sharedPreference.getBoolean(nameKey, false)
+    }
+    fun isSingUpShowed(nameKey: String): Boolean{
+        return sharedPreference.getBoolean(nameKey, false)
     }
 
-    fun putValue(boolean: Boolean) {
-        sharedPreference.edit()?.putBoolean("key", boolean)?.apply()
+    fun putValue(nameKey: String, boolean: Boolean) {
+        sharedPreference.edit()?.putBoolean(nameKey, boolean)?.apply()
     }
+
 }

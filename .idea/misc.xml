@@ -3,14 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable-v24/ic_mail.xml" value="0.1615" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/circle_edit_text.xml" value="0.226" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/custom_chooser_icon.xml" value="0.2405" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/gray_radius.xml" value="0.226" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/ic_add_note_plus.xml" value="0.226" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/ic_checked.xml" value="0.1525" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/ic_unchecked.xml" value="0.1525" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/drawable/orange_radius.xml" value="0.1615" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_detail.xml" value="0.4" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_detil.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_note_app_main.xml" value="0.4" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_on_board_main.xml" value="0.2453125" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_on_board_view_page.xml" value="0.2453125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_on_board_view_page.xml" value="0.320973348783314" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/fragment_sighn_up.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/ForthMonthProject/NoteApp/app/src/main/res/layout/item_note.xml" value="0.6" />
       </map>
     </option>

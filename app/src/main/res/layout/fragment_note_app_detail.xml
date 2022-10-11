@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.noteapp.detail.NoteAppDetailFragment"
-    android:background="@color/black">
+    >
 
 
     <androidx.appcompat.widget.Toolbar
@@ -57,7 +58,7 @@
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:hint="@string/ваш_заголовок"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
@@ -74,7 +75,7 @@
     <EditText
         android:id="@+id/directions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:hint="@string/ваше_описание"
         android:inputType="textMultiLine"
@@ -87,5 +88,36 @@
         android:paddingEnd="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp">
+
+        <RadioButton
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:button="@drawable/custom_chooser_icon"
+            android:checked="true"
+            android:background="@drawable/custom_chooser_icon"
+            />
+        <RadioButton
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:button="@drawable/custom_chooser_icon"
+            android:background="@drawable/custom_chooser_icon"
+            android:layout_marginHorizontal="30dp"/>
+
+        <RadioButton
+            android:layout_width="14dp"
+            android:layout_height="11dp"
+            android:button="@drawable/custom_chooser_icon"
+            android:background="@drawable/custom_chooser_icon"/>
+
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

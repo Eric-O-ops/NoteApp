@@ -2,7 +2,6 @@ package com.geektech.noteapp.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.geektech.noteapp.App
@@ -28,12 +27,19 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
 
-        if (App.preferenceHelper.isOnBoardShowed()) {
+        if (!IS_SING_UP_SHOWED){
+            navGraph.setStartDestination(R.id.signUpFragment)
+
+        }else {
             navGraph.setStartDestination(R.id.noteAppMainFragment)
-        } else {
-            navGraph.setStartDestination(R.id.onBoardMainFragment)
+
         }
 
         navController.graph = navGraph
+    }
+    private companion object{
+
+        val IS_SING_UP_SHOWED = App.preferenceHelper.isSingUpShowed("signUp")
+
     }
 }
