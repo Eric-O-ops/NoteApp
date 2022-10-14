@@ -16,7 +16,10 @@ data class NoteModel(
     var date: String,
 
     @ColumnInfo
-    var time: String
+    var time: String,
+
+    @ColumnInfo
+    var backgroundColor: String
 
     ) {
     @PrimaryKey(autoGenerate = true)

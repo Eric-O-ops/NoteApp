@@ -6,5 +6,4 @@
     <item android:drawable="@drawable/ic_unchecked"
         android:state_checked="false" />
 
-
 </selector>

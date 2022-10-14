@@ -1,9 +1,12 @@
 package com.geektech.noteapp.ui.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.graphics.toColor
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.ItemNoteBinding
@@ -29,6 +32,7 @@ class NoteAdapter(
             binding.itemDescription.text = model.description
             binding.itemData.text = model.date
             binding.itemTime.text = model.time
+            binding.itemCardView.setCardBackgroundColor(Color.parseColor(model.backgroundColor))
 
             itemView.setOnLongClickListener {
                 listener.onClick(model)

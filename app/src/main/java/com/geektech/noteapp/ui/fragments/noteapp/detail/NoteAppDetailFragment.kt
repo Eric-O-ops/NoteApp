@@ -1,7 +1,6 @@
 package com.geektech.noteapp.ui.fragments.noteapp.detail
 
 import android.annotation.SuppressLint
-import android.app.StatusBarManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,6 +19,8 @@ class NoteAppDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteAppDetailBinding
 
+    private var backgroundNoteColor: String = COLOR_BACKGROUND_ONE
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +35,7 @@ class NoteAppDetailFragment : Fragment() {
         sendNewNote()
         setUpDataAndTime()
         goToNoteMainFragment()
+        selectColor()
 
     }
 
@@ -45,13 +47,12 @@ class NoteAppDetailFragment : Fragment() {
                 val time = getTime()
 
             App.getDataIntense()?.getNoteDao()?.insert(
-                NoteModel(title,description,date,time)
+                NoteModel(title,description,date,time,backgroundNoteColor)
             )
+
             findNavController().navigate(
                 R.id.action_noteAppDetailFragment_to_noteAppMainFragment
             )
-                val newNote:NoteModel = NoteModel(title,description,"12.03.22","12:00")
-                setBackStackData("newNote",newNote,true)
         }
     }
 
@@ -83,5 +84,32 @@ class NoteAppDetailFragment : Fragment() {
         val time = timeFormat.format(Calendar.getInstance().time)
 
         return time
+    }
+    private fun selectColor() = with(binding){
+        colorOne.setOnClickListener {
+            radioBottomOne.isChecked = true
+            backgroundNoteColor  = COLOR_BACKGROUND_ONE
+
+        }
+
+        colorTwo.setOnClickListener {
+            radioBottomTwo.isChecked = true
+            backgroundNoteColor  = COLOR_BACKGROUND_TWO
+
+        }
+
+        colorThree.setOnClickListener {
+            radioBottomThree.isChecked = true
+            backgroundNoteColor  = COLOR_BACKGROUND_THREE
+
+        }
+    }
+
+    private companion object{
+
+        const val COLOR_BACKGROUND_ONE = "#191818"
+        const val COLOR_BACKGROUND_TWO = "#EBE4C9"
+        const val COLOR_BACKGROUND_THREE = "#571818"
+
     }
 }

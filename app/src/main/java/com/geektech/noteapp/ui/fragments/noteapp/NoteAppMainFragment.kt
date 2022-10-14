@@ -7,12 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.geektech.noteapp.App
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.FragmentNoteAppMainBinding
-import com.geektech.noteapp.getBackStackData
 import com.geektech.noteapp.models.NoteModel
 import com.geektech.noteapp.ui.adapters.NoteAdapter
 import com.geektech.noteapp.ui.adapters.OnNoteClickListener
@@ -41,9 +42,22 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
         addNote()
     }
 
-    private fun initializeRecycleViewAdapter() {
-        binding.recycleView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recycleView.adapter = adapter
+   // private var shapeRecyclerView = "GridL"
+    private fun initializeRecycleViewAdapter() = with(binding) {
+//        shapeRecycleView.setOnClickListener {
+//            if (shapeRecyclerView == "GridL") {
+//                shapeRecycleView.setBackgroundResource(R.drawable.ic_liniar_layout_shape)
+//                recycleView.layoutManager = GridLayoutManager(requireContext(), 2)
+//                shapeRecyclerView = "LinearL"
+//
+//            } else {
+//                shapeRecycleView.setBackgroundResource(R.drawable.ic_grid_layout_shape)
+//                recycleView.layoutManager = LinearLayoutManager(requireContext())
+//                shapeRecyclerView = "GridL"
+//            }
+//        }
+        recycleView.layoutManager = LinearLayoutManager(requireContext())
+        recycleView.adapter = adapter
     }
 
     private fun addNote(){
@@ -59,13 +73,6 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
         App.getDataIntense()?.getNoteDao()?.getAllModels()?.observe(viewLifecycleOwner){
             adapter.setList(it)
         }
-
-//        getBackStackData<NoteModel>(
-//            "newNote"
-//        , {
-//               noteList.add()
-//
-//        })
     }
 
     override fun onClick(model: NoteModel) {

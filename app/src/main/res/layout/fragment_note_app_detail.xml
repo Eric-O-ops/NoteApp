@@ -58,7 +58,7 @@
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:hint="@string/ваш_заголовок"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
@@ -75,7 +75,7 @@
     <EditText
         android:id="@+id/directions"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:hint="@string/ваше_описание"
         android:inputType="textMultiLine"
@@ -88,16 +88,53 @@
         android:paddingEnd="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
-    <RadioGroup
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/radio"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color_one"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#191818"
+            app:cardCornerRadius="16dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color_two"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#EBE4C9"
+            app:cardCornerRadius="16dp"
+            android:layout_marginHorizontal="30dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/color_three"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#571818"
+            app:cardCornerRadius="16dp" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="50dp">
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="30dp">
 
         <RadioButton
+            android:id="@+id/radio_bottom_one"
             android:layout_width="14dp"
             android:layout_height="11dp"
             android:button="@drawable/custom_chooser_icon"
@@ -105,13 +142,15 @@
             android:background="@drawable/custom_chooser_icon"
             />
         <RadioButton
+            android:id="@+id/radio_bottom_two"
             android:layout_width="14dp"
             android:layout_height="11dp"
             android:button="@drawable/custom_chooser_icon"
             android:background="@drawable/custom_chooser_icon"
-            android:layout_marginHorizontal="30dp"/>
+            android:layout_marginHorizontal="97dp"/>
 
         <RadioButton
+            android:id="@+id/radio_bottom_three"
             android:layout_width="14dp"
             android:layout_height="11dp"
             android:button="@drawable/custom_chooser_icon"

@@ -11,5 +11,8 @@
     <color name="little_light_black">#131212</color>
     <color name="dark_gray">#505050</color>
     <color name="gray">#8E8B8B</color>
+    <color name="note_background_color_one">#191818</color>
+    <color name="note_background_color_two">#EBE4C9</color>
+    <color name="note_background_color_three">#571818</color>
 
 </resources>
