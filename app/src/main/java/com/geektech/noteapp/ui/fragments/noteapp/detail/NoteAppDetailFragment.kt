@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.geektech.noteapp.App
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.FragmentNoteAppDetailBinding
 import com.geektech.noteapp.models.NoteModel
-import com.geektech.noteapp.setBackStackData
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -46,9 +46,16 @@ class NoteAppDetailFragment : Fragment() {
                 val date = getData()
                 val time = getTime()
 
-            App.getDataIntense()?.getNoteDao()?.insert(
-                NoteModel(title,description,date,time,backgroundNoteColor)
-            )
+            if (time.isNotEmpty() || description.isNotEmpty()) {
+
+                App.getDataIntense()?.getNoteDao()?.insert(
+                    NoteModel(title, description, date, time, backgroundNoteColor)
+                )
+
+            }else{
+                Toast.makeText(requireContext(), "Massage mustn't empty", Toast.LENGTH_SHORT).show()
+
+            }
 
             findNavController().navigate(
                 R.id.action_noteAppDetailFragment_to_noteAppMainFragment
@@ -103,6 +110,24 @@ class NoteAppDetailFragment : Fragment() {
             backgroundNoteColor  = COLOR_BACKGROUND_THREE
 
         }
+    }
+
+    // TODO: change note 
+    private fun changeNote(){
+        if (App.preferenceHelper.isChangeNote()){
+            binding.time.visibility = View.GONE
+            binding.data.visibility = View.GONE
+
+        }
+        binding.textConfirmNote.setOnClickListener {
+
+
+
+
+        }
+
+
+
     }
 
     private companion object{

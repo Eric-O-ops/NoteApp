@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,14 +22,13 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
 
     private lateinit var binding: FragmentNoteAppMainBinding
 
-    private var noteList:List<NoteModel> = ArrayList()
-
-    private val adapter:NoteAdapter = NoteAdapter(noteList,this)
+    private val adapter:NoteAdapter = NoteAdapter(this,this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        App.preferenceHelper.putValue("isLinear", true)
         binding = FragmentNoteAppMainBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -40,24 +39,47 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
         initializeRecycleViewAdapter()
         getNoteAndAddToList()
         addNote()
+        setShapeRecyclerView()
     }
 
-   // private var shapeRecyclerView = "GridL"
+    // TODO: change dynamically layout item in recyclerView
     private fun initializeRecycleViewAdapter() = with(binding) {
-//        shapeRecycleView.setOnClickListener {
-//            if (shapeRecyclerView == "GridL") {
-//                shapeRecycleView.setBackgroundResource(R.drawable.ic_liniar_layout_shape)
-//                recycleView.layoutManager = GridLayoutManager(requireContext(), 2)
-//                shapeRecyclerView = "LinearL"
-//
-//            } else {
-//                shapeRecycleView.setBackgroundResource(R.drawable.ic_grid_layout_shape)
-//                recycleView.layoutManager = LinearLayoutManager(requireContext())
-//                shapeRecyclerView = "GridL"
-//            }
-//        }
-        recycleView.layoutManager = LinearLayoutManager(requireContext())
-        recycleView.adapter = adapter
+       //App.preferenceHelper.putValue("isLinear", true)
+       val isShapeRecyclerViewLinear = App.preferenceHelper.isLinearLayout("isLinear")
+
+       if (isShapeRecyclerViewLinear){
+           recycleView.layoutManager = LinearLayoutManager(requireContext())
+
+       }
+       else{
+           recycleView.layoutManager = GridLayoutManager(requireContext(),2)
+
+       }
+
+       recycleView.adapter = adapter
+    }
+
+    private fun setShapeRecyclerView(){
+        binding.shapeRecycleView.setOnClickListener {
+            val isShapeRecyclerViewLinear = App.preferenceHelper.isLinearLayout("isLinear")
+
+            if (isShapeRecyclerViewLinear){
+                binding.recycleView.layoutManager = GridLayoutManager(requireContext(),2)
+                App.preferenceHelper.removeValue("isLinear")
+                App.preferenceHelper.putValue("isLinear", false)
+                binding.shapeRecycleView.setBackgroundResource(R.drawable.ic_liniar_layout_shape)
+                Toast.makeText(requireContext(), "Grid - $isShapeRecyclerViewLinear ", Toast.LENGTH_SHORT).show()
+
+            }
+            else{
+                binding.recycleView.layoutManager = LinearLayoutManager(requireContext())
+                App.preferenceHelper.removeValue("isLinear")
+                App.preferenceHelper.putValue("isLinear", true)
+                binding.shapeRecycleView.setBackgroundResource(R.drawable.ic_grid_layout_shape)
+                Toast.makeText(requireContext(), "Linear - $isShapeRecyclerViewLinear", Toast.LENGTH_SHORT).show()
+
+            }
+        }
     }
 
     private fun addNote(){
@@ -75,7 +97,7 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
         }
     }
 
-    override fun onClick(model: NoteModel) {
+    override fun onLongClick(model: NoteModel) {
         val alertDialog = AlertDialog.Builder(requireContext())
             .setCancelable(false)
             .setTitle("Удалить заметку")
@@ -87,5 +109,14 @@ class NoteAppMainFragment : Fragment(), OnNoteClickListener {
             .setNegativeButton("нет",DialogInterface.OnClickListener{dialogInterface, i ->dialogInterface
 
             }).create().show()
+    }
+
+    // TODO: change note
+    override fun onShortClick(model: NoteModel) {
+        App.preferenceHelper.putValue("changeNote", true)
+        findNavController().navigate(
+            R.id.action_noteAppMainFragment_to_noteAppDetailFragment
+
+        )
     }
 }

@@ -10,5 +10,4 @@ abstract class AppDatabase:RoomDatabase() {
 
     abstract fun getNoteDao():NoteDao
 
-
 }

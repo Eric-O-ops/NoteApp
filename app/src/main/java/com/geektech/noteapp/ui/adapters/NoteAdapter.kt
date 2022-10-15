@@ -5,17 +5,18 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toDrawable
-import androidx.core.graphics.toColor
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.noteapp.R
 import com.geektech.noteapp.databinding.ItemNoteBinding
 import com.geektech.noteapp.models.NoteModel
 
 class NoteAdapter(
-    private var noteList:List<NoteModel>,
-    private val onNoteClick:OnNoteClickListener
+    private val onNoteLongClick:OnNoteClickListener,
+    private val onNoteShortClick: OnNoteClickListener
+
 ):RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
+
+    private var noteList:List<NoteModel> = ArrayList()
 
     @SuppressLint("NotifyDataSetChanged")
      fun setList(list: List<NoteModel>){
@@ -35,8 +36,13 @@ class NoteAdapter(
             binding.itemCardView.setCardBackgroundColor(Color.parseColor(model.backgroundColor))
 
             itemView.setOnLongClickListener {
-                listener.onClick(model)
+                listener.onLongClick(model)
                 return@setOnLongClickListener true
+            }
+
+            itemView.setOnClickListener {
+                listener.onShortClick(model)
+
             }
         }
     }
@@ -47,16 +53,16 @@ class NoteAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(noteList[position],onNoteClick)
+        holder.onBind(noteList[position],onNoteLongClick)
 
     }
 
     override fun getItemCount(): Int {
         return noteList.size
     }
-
 }
 
 interface OnNoteClickListener{
-    fun onClick(model: NoteModel)
+    fun onLongClick(model: NoteModel)
+    fun onShortClick(model: NoteModel)
 }
